@@ -2,7 +2,7 @@ import { useContext } from 'react';
 
 import { Box, alpha, Stack, lighten, Divider, IconButton, Tooltip, styled, useTheme } from '@mui/material';
 import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
-import { SidebarContext } from 'contexts/SidebarContext';
+import { SidebarContext } from 'core/contexts/SidebarContext';
 import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
 
 import HeaderButtons from './Buttons';

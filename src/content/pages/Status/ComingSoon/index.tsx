@@ -13,7 +13,7 @@ import {
   FormHelperText
 } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
-import Logo from 'components/LogoSign';
+import Logo from 'core/components/LogoSign';
 
 import { styled } from '@mui/material/styles';
 import FacebookIcon from '@mui/icons-material/Facebook';

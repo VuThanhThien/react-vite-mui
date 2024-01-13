@@ -5,10 +5,12 @@ import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs';
 import {LocalizationProvider} from '@mui/x-date-pickers/LocalizationProvider';
 
 import { CssBaseline } from '@mui/material';
-import {ThemeProviderWrapper} from './theme/ThemeProvider';
+import {ThemeProviderWrapper} from './core/theme/ThemeProvider';
+import usePageTracking from 'core/hooks/usePageTracking';
 
 function App() {
   const content = useRoutes(router);
+  usePageTracking();
 
   return (
     <ThemeProviderWrapper>

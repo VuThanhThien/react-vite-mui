@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
-import PageTitle from 'components/PageTitle';
-import PageTitleWrapper from 'components/PageTitleWrapper';
+import PageTitle from 'core/components/PageTitle';
+import PageTitleWrapper from 'core/components/PageTitleWrapper';
 import {
   Container,
   Grid,
@@ -10,7 +10,7 @@ import {
   Divider
 } from '@mui/material';
 import { useState } from 'react';
-import Footer from 'components/Footer';
+import Footer from 'core/components/Footer';
 
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';

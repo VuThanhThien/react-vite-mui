@@ -1,8 +1,8 @@
 import { Helmet } from 'react-helmet-async';
-import PageTitle from 'components/PageTitle';
+import PageTitle from 'core/components/PageTitle';
 import { useState } from 'react';
 
-import PageTitleWrapper from 'components/PageTitleWrapper';
+import PageTitleWrapper from 'core/components/PageTitleWrapper';
 import {
   Container,
   Grid,
@@ -11,7 +11,7 @@ import {
   CardContent,
   Divider
 } from '@mui/material';
-import Footer from 'components/Footer';
+import Footer from 'core/components/Footer';
 
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';

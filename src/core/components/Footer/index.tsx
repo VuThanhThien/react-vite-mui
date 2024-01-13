@@ -7,6 +7,7 @@ const FooterWrapper = styled(Container)(
 );
 
 function Footer() {
+  
   return (
     <FooterWrapper className="footer-wrapper">
       <Box
@@ -18,7 +19,7 @@ function Footer() {
       >
         <Box>
           <Typography variant="subtitle1">
-            &copy; react - vite - mui template
+            &copy; {import.meta.env.VITE_APP_NAME}
           </Typography>
         </Box>
         <Typography

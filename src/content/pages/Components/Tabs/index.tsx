@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
-import PageTitle from 'components/PageTitle';
-import PageTitleWrapper from 'components/PageTitleWrapper';
+import PageTitle from 'core/components/PageTitle';
+import PageTitleWrapper from 'core/components/PageTitleWrapper';
 import {
   Container,
   Grid,
@@ -15,7 +15,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Footer from 'components/Footer';
+import Footer from 'core/components/Footer';
 
 interface TabPanelProps {
   children?: React.ReactNode;
