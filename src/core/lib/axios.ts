@@ -32,9 +32,9 @@ axios.interceptors.response.use(
     const refreshToken = storage.getRefreshTokenClient();
 
     if (!publicEndpoint.includes(originalConfig.url)) {
-      if (!refreshToken) {
-        window.location.href = '/login';
-      }
+      // if (!refreshToken) {
+      //   window.location.href = '/login';
+      // }
       if (error.response.data.statusCode === 401 && refreshToken) {
         try {
           const res = await axios.post('/session/refreshSession', {

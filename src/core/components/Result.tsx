@@ -1,8 +1,8 @@
 import React from 'react';
 import SvgContainer from './SvgContainer';
 import { Box, Container, Typography } from '@mui/material';
-import ErrorSvg from '../assets/error.svg';
-import SuccessSvg from '../assets/success.svg';
+import ErrorSvg from '/assets/success.svg';
+import SuccessSvg from '/assets/success.svg';
 
 type ResultImageProps = {
   customImage?: React.ReactNode;
@@ -14,9 +14,9 @@ const ResultImage = ({ customImage, status }: ResultImageProps) => {
 
   if (!image) {
     if (status === 'error') {
-      image = <ErrorSvg />;
+      image = <img src={ErrorSvg} alt='Your SVG' />;
     } else if (status === 'success') {
-      image = <SuccessSvg />;
+      image = <img src={SuccessSvg} alt='Your SVG' />;
     }
   }
 

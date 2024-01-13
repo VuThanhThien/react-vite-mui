@@ -9,6 +9,7 @@ import App from 'App';
 import { StrictMode, Suspense } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import SuspenseLoader from 'core/components/SuspenseLoader';
+import { ReactQueryDevtools } from 'react-query/devtools';
 import './core/config/i18n';
 import QueryWrapper from 'core/components/QueryWrapper';
 import AuthProvider from 'content/auth/contexts/AuthProvider';
@@ -48,6 +49,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                 </SnackbarProvider>
               </HelmetProvider>
             </QueryWrapper>
+            <ReactQueryDevtools initialIsOpen={false} />
           </QueryClientProvider>
         </Sentry.ErrorBoundary>
       </Suspense>
