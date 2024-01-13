@@ -16,7 +16,7 @@ const TabsWrapper = styled(Tabs)(
     .MuiTabs-scrollableX {
       overflow-x: auto !important;
     }
-`
+`,
 );
 
 function ManagementUserSettings() {
@@ -26,7 +26,7 @@ function ManagementUserSettings() {
     { value: 'activity', label: 'Activity' },
     { value: 'edit_profile', label: 'Edit Profile' },
     { value: 'notifications', label: 'Notifications' },
-    { value: 'security', label: 'Passwords/Security' }
+    { value: 'security', label: 'Passwords/Security' },
   ];
 
   const handleTabsChange = (event: ChangeEvent<{}>, value: string): void => {
@@ -41,22 +41,16 @@ function ManagementUserSettings() {
       <PageTitleWrapper>
         <PageHeader />
       </PageTitleWrapper>
-      <Container maxWidth="lg">
-        <Grid
-          container
-          direction="row"
-          justifyContent="center"
-          alignItems="stretch"
-          spacing={3}
-        >
+      <Container maxWidth='lg'>
+        <Grid container direction='row' justifyContent='center' alignItems='stretch' spacing={3}>
           <Grid item xs={12}>
             <TabsWrapper
               onChange={handleTabsChange}
               value={currentTab}
-              variant="scrollable"
-              scrollButtons="auto"
-              textColor="primary"
-              indicatorColor="primary"
+              variant='scrollable'
+              scrollButtons='auto'
+              textColor='primary'
+              indicatorColor='primary'
             >
               {tabs.map((tab) => (
                 <Tab key={tab.value} label={tab.label} value={tab.value} />

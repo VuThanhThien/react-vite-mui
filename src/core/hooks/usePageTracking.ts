@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const usePageTracking = () => {
   const location = useLocation();
@@ -14,7 +14,7 @@ const usePageTracking = () => {
 
   useEffect(() => {
     if (initialized) {
-      (window as any).gtag("send", "page_view", {
+      (window as any).gtag('send', 'page_view', {
         page_location: window.location.href,
         page_path: window.location.pathname,
       });

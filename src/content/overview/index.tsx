@@ -11,7 +11,7 @@ const OverviewWrapper = styled(Box)(
     flex: 1;
     overflow-x: hidden;
     align-items: center;
-`
+`,
 );
 
 export const Overview = () => {
@@ -20,8 +20,8 @@ export const Overview = () => {
       <Helmet>
         <title>Tokyo Free White React Typescript Admin Dashboard</title>
       </Helmet>
-      <Container maxWidth="lg">
-        <Box display="flex" justifyContent="center" py={5} alignItems="center">
+      <Container maxWidth='lg'>
+        <Box display='flex' justifyContent='center' py={5} alignItems='center'>
           <Logo />
         </Box>
         <Card sx={{ p: 10, mb: 10, borderRadius: 12 }}>
@@ -30,5 +30,4 @@ export const Overview = () => {
       </Container>
     </OverviewWrapper>
   );
-}
-
+};

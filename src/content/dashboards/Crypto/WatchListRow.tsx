@@ -9,7 +9,7 @@ import {
   Stack,
   Divider,
   styled,
-  useTheme
+  useTheme,
 } from '@mui/material';
 import Text from 'core/components/Text';
 import Label from 'core/components/Label';
@@ -31,9 +31,7 @@ const AvatarWrapper = styled(Avatar)(
     height: ${theme.spacing(5.5)};
     width: ${theme.spacing(5.5)};
     background: ${
-      theme.palette.mode === 'dark'
-        ? theme.colors.alpha.trueWhite[30]
-        : alpha(theme.colors.alpha.black[100], 0.07)
+      theme.palette.mode === 'dark' ? theme.colors.alpha.trueWhite[30] : alpha(theme.colors.alpha.black[100], 0.07)
     };
   
     img {
@@ -44,7 +42,7 @@ const AvatarWrapper = styled(Avatar)(
       height: ${theme.spacing(4.5)};
       width: ${theme.spacing(4.5)};
     }
-`
+`,
 );
 
 function WatchListRow() {
@@ -53,35 +51,27 @@ function WatchListRow() {
   const Box1Options: ApexOptions = {
     chart: {
       animations: {
-        enabled: false
+        enabled: false,
       },
       background: 'transparent',
       toolbar: {
-        show: false
+        show: false,
       },
       sparkline: {
-        enabled: true
+        enabled: true,
       },
       zoom: {
-        enabled: false
-      }
+        enabled: false,
+      },
     },
-    labels: [
-      'Monday',
-      'Tueday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday',
-      'Sunday'
-    ],
+    labels: ['Monday', 'Tueday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
     stroke: {
       curve: 'smooth',
       colors: [theme.colors.primary.main],
-      width: 2
+      width: 2,
     },
     yaxis: {
-      show: false
+      show: false,
     },
     colors: [theme.colors.primary.main],
     grid: {
@@ -89,267 +79,216 @@ function WatchListRow() {
         top: 10,
         right: 5,
         bottom: 10,
-        left: 5
-      }
+        left: 5,
+      },
     },
     theme: {
-      mode: theme.palette.mode
+      mode: theme.palette.mode,
     },
     tooltip: {
       fixed: {
-        enabled: true
+        enabled: true,
       },
       x: {
-        show: true
+        show: true,
       },
       y: {
         title: {
           formatter: function () {
             return 'Price: $';
-          }
-        }
+          },
+        },
       },
       marker: {
-        show: false
-      }
-    }
+        show: false,
+      },
+    },
   };
 
   const Box1Data = [
     {
       name: 'Bitcoin',
-      data: [55.701, 57.598, 48.607, 46.439, 58.755, 46.978, 58.16]
-    }
+      data: [55.701, 57.598, 48.607, 46.439, 58.755, 46.978, 58.16],
+    },
   ];
 
   const Box2Data = [
     {
       name: 'Ethereum',
-      data: [1.854, 1.873, 1.992, 2.009, 1.909, 1.942, 1.884]
-    }
+      data: [1.854, 1.873, 1.992, 2.009, 1.909, 1.942, 1.884],
+    },
   ];
 
   const Box3Data = [
     {
       name: 'Cardano',
-      data: [13, 16, 14, 18, 8, 11, 20]
-    }
+      data: [13, 16, 14, 18, 8, 11, 20],
+    },
   ];
 
   return (
     <Card>
       <Stack
-        direction="row"
-        justifyContent="space-evenly"
-        alignItems="stretch"
-        divider={<Divider orientation="vertical" flexItem />}
+        direction='row'
+        justifyContent='space-evenly'
+        alignItems='stretch'
+        divider={<Divider orientation='vertical' flexItem />}
         spacing={0}
       >
         <Box
           sx={{
             width: '100%',
-            p: 3
+            p: 3,
           }}
         >
-          <Box
-            display="flex"
-            alignItems="flex-start"
-            justifyContent="space-between"
-          >
-            <Box display="flex" alignItems="center">
+          <Box display='flex' alignItems='flex-start' justifyContent='space-between'>
+            <Box display='flex' alignItems='center'>
               <AvatarWrapper>
-                <img
-                  alt="BTC"
-                  src="/static/images/placeholders/logo/bitcoin.png"
-                />
+                <img alt='BTC' src='/static/images/placeholders/logo/bitcoin.png' />
               </AvatarWrapper>
               <Box>
-                <Typography variant="h4" noWrap>
+                <Typography variant='h4' noWrap>
                   Bitcoin
                 </Typography>
-                <Typography variant="subtitle1" noWrap>
+                <Typography variant='subtitle1' noWrap>
                   BTC
                 </Typography>
               </Box>
             </Box>
-            <Label color="secondary">24h</Label>
+            <Label color='secondary'>24h</Label>
           </Box>
-          <Box
-            mt={3}
-            display="flex"
-            alignItems="center"
-            justifyContent="space-between"
-          >
+          <Box mt={3} display='flex' alignItems='center' justifyContent='space-between'>
             <Box
               sx={{
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'flex-start'
+                justifyContent: 'flex-start',
               }}
             >
               <Typography
-                variant="h2"
+                variant='h2'
                 sx={{
-                  pr: 1
+                  pr: 1,
                 }}
               >
                 $56,475.99
               </Typography>
-              <Text color="success">
+              <Text color='success'>
                 <b>+12.5%</b>
               </Text>
             </Box>
             <TrendingUpTwoToneIcon
               sx={{
-                color: `${theme.colors.success.main}`
+                color: `${theme.colors.success.main}`,
               }}
             />
           </Box>
           <Box pt={2}>
-            <Chart
-              options={Box1Options}
-              series={Box1Data}
-              type="line"
-              height={100}
-            />
+            <Chart options={Box1Options} series={Box1Data} type='line' height={100} />
           </Box>
         </Box>
         <Box
           sx={{
             width: '100%',
-            p: 3
+            p: 3,
           }}
         >
-          <Box
-            display="flex"
-            alignItems="flex-start"
-            justifyContent="space-between"
-          >
-            <Box display="flex" alignItems="center">
+          <Box display='flex' alignItems='flex-start' justifyContent='space-between'>
+            <Box display='flex' alignItems='center'>
               <AvatarWrapper>
-                <img
-                  alt="ETH"
-                  src="/static/images/placeholders/logo/ethereum.png"
-                />
+                <img alt='ETH' src='/static/images/placeholders/logo/ethereum.png' />
               </AvatarWrapper>
               <Box>
-                <Typography variant="h4" noWrap>
+                <Typography variant='h4' noWrap>
                   Ethereum
                 </Typography>
-                <Typography variant="subtitle1" noWrap>
+                <Typography variant='subtitle1' noWrap>
                   ETH
                 </Typography>
               </Box>
             </Box>
-            <Label color="secondary">24h</Label>
+            <Label color='secondary'>24h</Label>
           </Box>
-          <Box
-            mt={3}
-            display="flex"
-            alignItems="center"
-            justifyContent="space-between"
-          >
+          <Box mt={3} display='flex' alignItems='center' justifyContent='space-between'>
             <Box
               sx={{
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'flex-start'
+                justifyContent: 'flex-start',
               }}
             >
               <Typography
-                variant="h2"
+                variant='h2'
                 sx={{
-                  pr: 1
+                  pr: 1,
                 }}
               >
                 $1,968.00
               </Typography>
-              <Text color="error">
+              <Text color='error'>
                 <b>-3.24%</b>
               </Text>
             </Box>
             <TrendingDownTwoToneIcon
               sx={{
-                color: `${theme.colors.error.main}`
+                color: `${theme.colors.error.main}`,
               }}
             />
           </Box>
           <Box pt={2}>
-            <Chart
-              options={Box1Options}
-              series={Box2Data}
-              type="line"
-              height={100}
-            />
+            <Chart options={Box1Options} series={Box2Data} type='line' height={100} />
           </Box>
         </Box>
         <Box
           sx={{
             width: '100%',
-            p: 3
+            p: 3,
           }}
         >
-          <Box
-            display="flex"
-            alignItems="flex-start"
-            justifyContent="space-between"
-          >
-            <Box display="flex" alignItems="center">
+          <Box display='flex' alignItems='flex-start' justifyContent='space-between'>
+            <Box display='flex' alignItems='center'>
               <AvatarWrapper>
-                <img
-                  alt="ADA"
-                  src="/static/images/placeholders/logo/cardano.png"
-                />
+                <img alt='ADA' src='/static/images/placeholders/logo/cardano.png' />
               </AvatarWrapper>
               <Box>
-                <Typography variant="h4" noWrap>
+                <Typography variant='h4' noWrap>
                   Cardano
                 </Typography>
-                <Typography variant="subtitle1" noWrap>
+                <Typography variant='subtitle1' noWrap>
                   ADA
                 </Typography>
               </Box>
             </Box>
-            <Label color="secondary">24h</Label>
+            <Label color='secondary'>24h</Label>
           </Box>
-          <Box
-            mt={3}
-            display="flex"
-            alignItems="center"
-            justifyContent="space-between"
-          >
+          <Box mt={3} display='flex' alignItems='center' justifyContent='space-between'>
             <Box
               sx={{
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'flex-start'
+                justifyContent: 'flex-start',
               }}
             >
               <Typography
-                variant="h2"
+                variant='h2'
                 sx={{
-                  pr: 1
+                  pr: 1,
                 }}
               >
                 $23.00
               </Typography>
-              <Text color="error">
+              <Text color='error'>
                 <b>-0.33%</b>
               </Text>
             </Box>
             <TrendingFlatTwoToneIcon
               sx={{
-                color: `${theme.colors.warning.main}`
+                color: `${theme.colors.warning.main}`,
               }}
             />
           </Box>
           <Box pt={2}>
-            <Chart
-              options={Box1Options}
-              series={Box3Data}
-              type="line"
-              height={100}
-            />
+            <Chart options={Box1Options} series={Box3Data} type='line' height={100} />
           </Box>
         </Box>
       </Stack>
@@ -359,10 +298,10 @@ function WatchListRow() {
         sx={{
           p: 3,
           display: 'flex',
-          justifyContent: 'center'
+          justifyContent: 'center',
         }}
       >
-        <Button variant="outlined">View more assets</Button>
+        <Button variant='outlined'>View more assets</Button>
       </CardActions>
     </Card>
   );

@@ -12,7 +12,7 @@ import {
   ListItem,
   ListItemText,
   List,
-  ListItemAvatar
+  ListItemAvatar,
 } from '@mui/material';
 import TrendingUp from '@mui/icons-material/TrendingUp';
 import Text from 'core/components/Text';
@@ -26,7 +26,7 @@ const AvatarSuccess = styled(Avatar)(
       width: ${theme.spacing(8)};
       height: ${theme.spacing(8)};
       box-shadow: ${theme.colors.shadows.success};
-`
+`,
 );
 
 const ListItemAvatarWrapper = styled(ListItemAvatar)(
@@ -39,9 +39,7 @@ const ListItemAvatarWrapper = styled(ListItemAvatar)(
   padding: ${theme.spacing(0.5)};
   border-radius: 60px;
   background: ${
-    theme.palette.mode === 'dark'
-      ? theme.colors.alpha.trueWhite[30]
-      : alpha(theme.colors.alpha.black[100], 0.07)
+    theme.palette.mode === 'dark' ? theme.colors.alpha.trueWhite[30] : alpha(theme.colors.alpha.black[100], 0.07)
   };
 
   img {
@@ -52,7 +50,7 @@ const ListItemAvatarWrapper = styled(ListItemAvatar)(
     height: ${theme.spacing(4.5)};
     width: ${theme.spacing(4.5)};
   }
-`
+`,
 );
 
 function AccountBalance() {
@@ -63,15 +61,15 @@ function AccountBalance() {
       background: 'transparent',
       stacked: false,
       toolbar: {
-        show: false
-      }
+        show: false,
+      },
     },
     plotOptions: {
       pie: {
         donut: {
-          size: '60%'
-        }
-      }
+          size: '60%',
+        },
+      },
     },
     colors: ['#ff9900', '#1c81c2', '#333', '#5c6ac0'],
     dataLabels: {
@@ -80,7 +78,7 @@ function AccountBalance() {
         return val + '%';
       },
       style: {
-        colors: [theme.colors.alpha.trueWhite[100]]
+        colors: [theme.colors.alpha.trueWhite[100]],
       },
       background: {
         enabled: true,
@@ -95,8 +93,8 @@ function AccountBalance() {
           left: 1,
           blur: 1,
           color: theme.colors.alpha.black[70],
-          opacity: 0.5
-        }
+          opacity: 0.5,
+        },
       },
       dropShadow: {
         enabled: true,
@@ -104,25 +102,25 @@ function AccountBalance() {
         left: 1,
         blur: 1,
         color: theme.colors.alpha.black[50],
-        opacity: 0.5
-      }
+        opacity: 0.5,
+      },
     },
     fill: {
-      opacity: 1
+      opacity: 1,
     },
     labels: ['Bitcoin', 'Ripple', 'Cardano', 'Ethereum'],
     legend: {
       labels: {
-        colors: theme.colors.alpha.trueWhite[100]
+        colors: theme.colors.alpha.trueWhite[100],
       },
-      show: false
+      show: false,
     },
     stroke: {
-      width: 0
+      width: 0,
     },
     theme: {
-      mode: theme.palette.mode
-    }
+      mode: theme.palette.mode,
+    },
   };
 
   const chartSeries = [10, 20, 25, 45];
@@ -134,41 +132,37 @@ function AccountBalance() {
           <Box p={4}>
             <Typography
               sx={{
-                pb: 3
+                pb: 3,
               }}
-              variant="h4"
+              variant='h4'
             >
               Account Balance
             </Typography>
             <Box>
-              <Typography variant="h1" gutterBottom>
+              <Typography variant='h1' gutterBottom>
                 $54,584.23
               </Typography>
-              <Typography
-                variant="h4"
-                fontWeight="normal"
-                color="text.secondary"
-              >
+              <Typography variant='h4' fontWeight='normal' color='text.secondary'>
                 1.0045983485234 BTC
               </Typography>
               <Box
-                display="flex"
+                display='flex'
                 sx={{
-                  py: 4
+                  py: 4,
                 }}
-                alignItems="center"
+                alignItems='center'
               >
                 <AvatarSuccess
                   sx={{
-                    mr: 2
+                    mr: 2,
                   }}
-                  variant="rounded"
+                  variant='rounded'
                 >
-                  <TrendingUp fontSize="large" />
+                  <TrendingUp fontSize='large' />
                 </AvatarSuccess>
                 <Box>
-                  <Typography variant="h4">+ $3,594.00</Typography>
-                  <Typography variant="subtitle2" noWrap>
+                  <Typography variant='h4'>+ $3,594.00</Typography>
+                  <Typography variant='subtitle2' noWrap>
                     this month
                   </Typography>
                 </Box>
@@ -176,12 +170,12 @@ function AccountBalance() {
             </Box>
             <Grid container spacing={3}>
               <Grid sm item>
-                <Button fullWidth variant="outlined">
+                <Button fullWidth variant='outlined'>
                   Send
                 </Button>
               </Grid>
               <Grid sm item>
-                <Button fullWidth variant="contained">
+                <Button fullWidth variant='contained'>
                   Receive
                 </Button>
               </Grid>
@@ -190,136 +184,112 @@ function AccountBalance() {
         </Grid>
         <Grid
           sx={{
-            position: 'relative'
+            position: 'relative',
           }}
-          display="flex"
-          alignItems="center"
+          display='flex'
+          alignItems='center'
           item
           xs={12}
           md={6}
         >
           <Box
-            component="span"
+            component='span'
             sx={{
-              display: { xs: 'none', md: 'inline-block' }
+              display: { xs: 'none', md: 'inline-block' },
             }}
           >
-            <Divider absolute orientation="vertical" />
+            <Divider absolute orientation='vertical' />
           </Box>
           <Box py={4} pr={4} flex={1}>
             <Grid container spacing={0}>
-              <Grid
-                xs={12}
-                sm={5}
-                item
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-              >
-                <Chart
-                  height={250}
-                  options={chartOptions}
-                  series={chartSeries}
-                  type="donut"
-                />
+              <Grid xs={12} sm={5} item display='flex' justifyContent='center' alignItems='center'>
+                <Chart height={250} options={chartOptions} series={chartSeries} type='donut' />
               </Grid>
-              <Grid xs={12} sm={7} item display="flex" alignItems="center">
+              <Grid xs={12} sm={7} item display='flex' alignItems='center'>
                 <List
                   disablePadding
                   sx={{
-                    width: '100%'
+                    width: '100%',
                   }}
                 >
                   <ListItem disableGutters>
                     <ListItemAvatarWrapper>
-                      <img
-                        alt="BTC"
-                        src="/static/images/placeholders/logo/bitcoin.png"
-                      />
+                      <img alt='BTC' src='/static/images/placeholders/logo/bitcoin.png' />
                     </ListItemAvatarWrapper>
                     <ListItemText
-                      primary="BTC"
+                      primary='BTC'
                       primaryTypographyProps={{ variant: 'h5', noWrap: true }}
-                      secondary="Bitcoin"
+                      secondary='Bitcoin'
                       secondaryTypographyProps={{
                         variant: 'subtitle2',
-                        noWrap: true
+                        noWrap: true,
                       }}
                     />
                     <Box>
-                      <Typography align="right" variant="h4" noWrap>
+                      <Typography align='right' variant='h4' noWrap>
                         20%
                       </Typography>
-                      <Text color="success">+2.54%</Text>
+                      <Text color='success'>+2.54%</Text>
                     </Box>
                   </ListItem>
                   <ListItem disableGutters>
                     <ListItemAvatarWrapper>
-                      <img
-                        alt="XRP"
-                        src="/static/images/placeholders/logo/ripple.png"
-                      />
+                      <img alt='XRP' src='/static/images/placeholders/logo/ripple.png' />
                     </ListItemAvatarWrapper>
                     <ListItemText
-                      primary="XRP"
+                      primary='XRP'
                       primaryTypographyProps={{ variant: 'h5', noWrap: true }}
-                      secondary="Ripple"
+                      secondary='Ripple'
                       secondaryTypographyProps={{
                         variant: 'subtitle2',
-                        noWrap: true
+                        noWrap: true,
                       }}
                     />
                     <Box>
-                      <Typography align="right" variant="h4" noWrap>
+                      <Typography align='right' variant='h4' noWrap>
                         10%
                       </Typography>
-                      <Text color="error">-1.22%</Text>
+                      <Text color='error'>-1.22%</Text>
                     </Box>
                   </ListItem>
                   <ListItem disableGutters>
                     <ListItemAvatarWrapper>
-                      <img
-                        alt="ADA"
-                        src="/static/images/placeholders/logo/cardano.png"
-                      />
+                      <img alt='ADA' src='/static/images/placeholders/logo/cardano.png' />
                     </ListItemAvatarWrapper>
                     <ListItemText
-                      primary="ADA"
+                      primary='ADA'
                       primaryTypographyProps={{ variant: 'h5', noWrap: true }}
-                      secondary="Cardano"
+                      secondary='Cardano'
                       secondaryTypographyProps={{
                         variant: 'subtitle2',
-                        noWrap: true
+                        noWrap: true,
                       }}
                     />
                     <Box>
-                      <Typography align="right" variant="h4" noWrap>
+                      <Typography align='right' variant='h4' noWrap>
                         40%
                       </Typography>
-                      <Text color="success">+10.50%</Text>
+                      <Text color='success'>+10.50%</Text>
                     </Box>
                   </ListItem>
                   <ListItem disableGutters>
                     <ListItemAvatarWrapper>
-                      <img
-                        alt="ETH"
-                        src="/static/images/placeholders/logo/ethereum.png"
-                      />
+                      <img alt='ETH' src='/static/images/placeholders/logo/ethereum.png' />
                     </ListItemAvatarWrapper>
                     <ListItemText
-                      primary="ETH"
+                      primary='ETH'
                       primaryTypographyProps={{ variant: 'h5', noWrap: true }}
-                      secondary="Ethereum"
+                      secondary='Ethereum'
                       secondaryTypographyProps={{
                         variant: 'subtitle2',
-                        noWrap: true
+                        noWrap: true,
                       }}
                     />
                     <Box>
-                      <Typography align="right" variant="h4" noWrap>
+                      <Typography align='right' variant='h4' noWrap>
                         30%
                       </Typography>
-                      <Text color="error">-12.38%</Text>
+                      <Text color='error'>-12.38%</Text>
                     </Box>
                   </ListItem>
                 </List>

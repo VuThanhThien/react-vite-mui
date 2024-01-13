@@ -4,14 +4,7 @@ import { styled } from '@mui/material/styles';
 
 interface LabelProps {
   className?: string;
-  color?:
-    | 'primary'
-    | 'black'
-    | 'secondary'
-    | 'error'
-    | 'warning'
-    | 'success'
-    | 'info';
+  color?: 'primary' | 'black' | 'secondary' | 'error' | 'warning' | 'success' | 'info';
   children?: ReactNode;
 }
 
@@ -62,15 +55,10 @@ const LabelWrapper = styled('span')(
           color: ${theme.palette.info.main}
         }
       }
-`
+`,
 );
 
-const Label: FC<LabelProps> = ({
-  className,
-  color = 'secondary',
-  children,
-  ...rest
-}) => {
+const Label: FC<LabelProps> = ({ className, color = 'secondary', children, ...rest }) => {
   return (
     <LabelWrapper className={'MuiLabel-' + color} {...rest}>
       {children}
@@ -81,15 +69,7 @@ const Label: FC<LabelProps> = ({
 Label.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  color: PropTypes.oneOf([
-    'primary',
-    'black',
-    'secondary',
-    'error',
-    'warning',
-    'success',
-    'info'
-  ])
+  color: PropTypes.oneOf(['primary', 'black', 'secondary', 'error', 'warning', 'success', 'info']),
 };
 
 export default Label;

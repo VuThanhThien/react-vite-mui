@@ -4,7 +4,7 @@ import { VITE_BASE_API_URL } from '../config';
 import { UserInfo } from 'content/auth/types/userInfo';
 import storage from 'core/utils/authStorage';
 
-const publicEndpoint = ['/api/login', '/session/createClientSession']
+const publicEndpoint = ['/api/login', '/session/createClientSession'];
 
 function authRequestInterceptor(config: InternalAxiosRequestConfig) {
   const accessToken = storage.getAccessTokenClient();

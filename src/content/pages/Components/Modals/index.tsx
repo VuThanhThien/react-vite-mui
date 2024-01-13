@@ -4,14 +4,7 @@ import { useState } from 'react';
 
 import PageTitle from 'core/components/PageTitle';
 import PageTitleWrapper from 'core/components/PageTitleWrapper';
-import {
-  Container,
-  Grid,
-  Card,
-  CardHeader,
-  CardContent,
-  Divider
-} from '@mui/material';
+import { Container, Grid, Card, CardHeader, CardContent, Divider } from '@mui/material';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 import List from '@mui/material/List';
@@ -29,9 +22,9 @@ import Footer from 'core/components/Footer';
 const emails = ['username@gmail.com', 'user02@gmail.com'];
 
 interface Props {
-  onClose: any,
-  open: boolean,
-  selectedValue: string
+  onClose: any;
+  open: boolean;
+  selectedValue: string;
 }
 
 function SimpleDialog(props: Props) {
@@ -50,11 +43,7 @@ function SimpleDialog(props: Props) {
       <DialogTitle>Set backup account</DialogTitle>
       <List sx={{ pt: 0 }}>
         {emails.map((email) => (
-          <ListItem
-            button
-            onClick={() => handleListItemClick(email)}
-            key={email}
-          >
+          <ListItem button onClick={() => handleListItemClick(email)} key={email}>
             <ListItemAvatar>
               <Avatar sx={{ bgcolor: blue[100], color: blue[600] }}>
                 <PersonIcon />
@@ -64,17 +53,13 @@ function SimpleDialog(props: Props) {
           </ListItem>
         ))}
 
-        <ListItem
-          autoFocus
-          button
-          onClick={() => handleListItemClick('addAccount')}
-        >
+        <ListItem autoFocus button onClick={() => handleListItemClick('addAccount')}>
           <ListItemAvatar>
             <Avatar>
               <AddIcon />
             </Avatar>
           </ListItemAvatar>
-          <ListItemText primary="Add account" />
+          <ListItemText primary='Add account' />
         </ListItem>
       </List>
     </Dialog>
@@ -101,36 +86,26 @@ function Modals() {
       </Helmet>
       <PageTitleWrapper>
         <PageTitle
-          heading="Modals"
-          subHeading="Dialogs inform users about a task and can contain critical information, require decisions, or involve multiple tasks."
-          docs="https://material-ui.com/components/dialogs/"
+          heading='Modals'
+          subHeading='Dialogs inform users about a task and can contain critical information, require decisions, or involve multiple tasks.'
+          docs='https://material-ui.com/components/dialogs/'
         />
       </PageTitleWrapper>
-      <Container maxWidth="lg">
-        <Grid
-          container
-          direction="row"
-          justifyContent="center"
-          alignItems="stretch"
-          spacing={3}
-        >
+      <Container maxWidth='lg'>
+        <Grid container direction='row' justifyContent='center' alignItems='stretch' spacing={3}>
           <Grid item xs={12}>
             <Card>
-              <CardHeader title="Basic Dialog" />
+              <CardHeader title='Basic Dialog' />
               <Divider />
               <CardContent>
-                <Typography variant="subtitle1" component="div">
+                <Typography variant='subtitle1' component='div'>
                   Selected: {selectedValue}
                 </Typography>
                 <br />
-                <Button variant="outlined" onClick={handleClickOpen}>
+                <Button variant='outlined' onClick={handleClickOpen}>
                   Open simple dialog
                 </Button>
-                <SimpleDialog
-                  selectedValue={selectedValue}
-                  open={open}
-                  onClose={handleClose}
-                />
+                <SimpleDialog selectedValue={selectedValue} open={open} onClose={handleClose} />
               </CardContent>
             </Card>
           </Grid>

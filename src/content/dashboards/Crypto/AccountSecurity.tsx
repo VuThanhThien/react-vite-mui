@@ -9,7 +9,7 @@ import {
   Switch,
   ListItemAvatar,
   Avatar,
-  styled
+  styled,
 } from '@mui/material';
 import LockTwoToneIcon from '@mui/icons-material/LockTwoTone';
 import PhoneLockedTwoToneIcon from '@mui/icons-material/PhoneLockedTwoTone';
@@ -20,21 +20,21 @@ const AvatarWrapperError = styled(Avatar)(
   ({ theme }) => `
       background-color: ${theme.colors.error.lighter};
       color:  ${theme.colors.error.main};
-`
+`,
 );
 
 const AvatarWrapperSuccess = styled(Avatar)(
   ({ theme }) => `
       background-color: ${theme.colors.success.lighter};
       color:  ${theme.colors.success.main};
-`
+`,
 );
 
 const AvatarWrapperWarning = styled(Avatar)(
   ({ theme }) => `
       background-color: ${theme.colors.warning.lighter};
       color:  ${theme.colors.warning.main};
-`
+`,
 );
 
 function AccountSecurity() {
@@ -55,12 +55,12 @@ function AccountSecurity() {
 
   return (
     <Card>
-      <CardHeader title="Account Security" />
+      <CardHeader title='Account Security' />
       <Divider />
       <List disablePadding>
         <ListItem
           sx={{
-            py: 2
+            py: 2,
           }}
         >
           <ListItemAvatar>
@@ -69,28 +69,23 @@ function AccountSecurity() {
             </AvatarWrapperError>
           </ListItemAvatar>
           <ListItemText
-            primary={<Text color="black">2FA Authentication</Text>}
+            primary={<Text color='black'>2FA Authentication</Text>}
             primaryTypographyProps={{
               variant: 'body1',
               fontWeight: 'bold',
               color: 'textPrimary',
               gutterBottom: true,
-              noWrap: true
+              noWrap: true,
             }}
-            secondary={<Text color="error">Disabled</Text>}
+            secondary={<Text color='error'>Disabled</Text>}
             secondaryTypographyProps={{ variant: 'body2', noWrap: true }}
           />
-          <Switch
-            edge="end"
-            color="primary"
-            onChange={handleToggle('2fa')}
-            checked={checked.indexOf('2fa') !== -1}
-          />
+          <Switch edge='end' color='primary' onChange={handleToggle('2fa')} checked={checked.indexOf('2fa') !== -1} />
         </ListItem>
         <Divider />
         <ListItem
           sx={{
-            py: 2
+            py: 2,
           }}
         >
           <ListItemAvatar>
@@ -99,20 +94,20 @@ function AccountSecurity() {
             </AvatarWrapperSuccess>
           </ListItemAvatar>
           <ListItemText
-            primary={<Text color="black">Phone Verification</Text>}
+            primary={<Text color='black'>Phone Verification</Text>}
             primaryTypographyProps={{
               variant: 'body1',
               fontWeight: 'bold',
               color: 'textPrimary',
               gutterBottom: true,
-              noWrap: true
+              noWrap: true,
             }}
-            secondary={<Text color="success">Active</Text>}
+            secondary={<Text color='success'>Active</Text>}
             secondaryTypographyProps={{ variant: 'body2', noWrap: true }}
           />
           <Switch
-            edge="end"
-            color="primary"
+            edge='end'
+            color='primary'
             onChange={handleToggle('phone_verification')}
             checked={checked.indexOf('phone_verification') !== -1}
           />
@@ -120,7 +115,7 @@ function AccountSecurity() {
         <Divider />
         <ListItem
           sx={{
-            py: 2
+            py: 2,
           }}
         >
           <ListItemAvatar>
@@ -129,20 +124,20 @@ function AccountSecurity() {
             </AvatarWrapperWarning>
           </ListItemAvatar>
           <ListItemText
-            primary={<Text color="black">Recovery Email</Text>}
+            primary={<Text color='black'>Recovery Email</Text>}
             primaryTypographyProps={{
               variant: 'body1',
               fontWeight: 'bold',
               color: 'textPrimary',
               gutterBottom: true,
-              noWrap: true
+              noWrap: true,
             }}
-            secondary={<Text color="warning">Not completed</Text>}
+            secondary={<Text color='warning'>Not completed</Text>}
             secondaryTypographyProps={{ variant: 'body2', noWrap: true }}
           />
           <Switch
-            edge="end"
-            color="primary"
+            edge='end'
+            color='primary'
             onChange={handleToggle('recovery_email')}
             checked={checked.indexOf('recovery_email') !== -1}
           />

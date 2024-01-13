@@ -10,7 +10,7 @@ import {
   FormControl,
   InputAdornment,
   Button,
-  FormHelperText
+  FormHelperText,
 } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
 import Logo from 'core/components/LogoSign';
@@ -30,102 +30,89 @@ const MainContent = styled(Box)(
     flex-direction: column;
     align-items: center;
     justify-content: center;
-`
+`,
 );
 
 const TypographyH1 = styled(Typography)(
   ({ theme }) => `
   font-size: ${theme.typography.pxToRem(75)};
-`
+`,
 );
 
 const TypographyH3 = styled(Typography)(
   ({ theme }) => `
   color: ${theme.colors.alpha.black[50]};
-`
+`,
 );
 
 const OutlinedInputWrapper = styled(OutlinedInput)(
   ({ theme }) => `
     background-color: ${theme.colors.alpha.white[100]};
-`
+`,
 );
 
 const ButtonNotify = styled(Button)(
   ({ theme }) => `
     margin-right: -${theme.spacing(1)};
-`
+`,
 );
 
 function StatusComingSoon() {
-
   return (
     <>
       <Helmet>
         <title>Status - Coming Soon</title>
       </Helmet>
       <MainContent>
-        <Container maxWidth="md">
+        <Container maxWidth='md'>
           <Logo />
-          <Box textAlign="center" mb={3}>
-            <Container maxWidth="xs">
-              <Typography variant="h1" sx={{ mt: 4, mb: 2 }}>
+          <Box textAlign='center' mb={3}>
+            <Container maxWidth='xs'>
+              <Typography variant='h1' sx={{ mt: 4, mb: 2 }}>
                 Coming Soon
               </Typography>
-              <Typography
-                variant="h3"
-                color="text.secondary"
-                fontWeight="normal"
-                sx={{ mb: 4 }}
-              >
-                We're working on implementing the last features before our
-                launch!
+              <Typography variant='h3' color='text.secondary' fontWeight='normal' sx={{ mb: 4 }}>
+                We're working on implementing the last features before our launch!
               </Typography>
             </Container>
-            <img
-              alt="Coming Soon"
-              height={200}
-              src="/static/images/status/coming-soon.svg"
-            />
+            <img alt='Coming Soon' height={200} src='/static/images/status/coming-soon.svg' />
           </Box>
 
-          <Container maxWidth="sm">
+          <Container maxWidth='sm'>
             <Box sx={{ textAlign: 'center', p: 4 }}>
-              <FormControl variant="outlined" fullWidth>
+              <FormControl variant='outlined' fullWidth>
                 <OutlinedInputWrapper
-                  type="text"
-                  placeholder="Enter your email address here..."
+                  type='text'
+                  placeholder='Enter your email address here...'
                   endAdornment={
-                    <InputAdornment position="end">
-                      <ButtonNotify variant="contained" size="small">
+                    <InputAdornment position='end'>
+                      <ButtonNotify variant='contained' size='small'>
                         Notify Me
                       </ButtonNotify>
                     </InputAdornment>
                   }
                   startAdornment={
-                    <InputAdornment position="start">
+                    <InputAdornment position='start'>
                       <MailTwoToneIcon />
                     </InputAdornment>
                   }
                 />
-                <FormHelperText>
-                  We'll email you once our website is launched!
-                </FormHelperText>
+                <FormHelperText>We'll email you once our website is launched!</FormHelperText>
               </FormControl>
               <Divider sx={{ my: 4 }} />
               <Box sx={{ textAlign: 'center' }}>
-                <Tooltip arrow placement="top" title="Facebook">
-                  <IconButton color="primary">
+                <Tooltip arrow placement='top' title='Facebook'>
+                  <IconButton color='primary'>
                     <FacebookIcon />
                   </IconButton>
                 </Tooltip>
-                <Tooltip arrow placement="top" title="Twitter">
-                  <IconButton color="primary">
+                <Tooltip arrow placement='top' title='Twitter'>
+                  <IconButton color='primary'>
                     <TwitterIcon />
                   </IconButton>
                 </Tooltip>
-                <Tooltip arrow placement="top" title="Instagram">
-                  <IconButton color="primary">
+                <Tooltip arrow placement='top' title='Instagram'>
+                  <IconButton color='primary'>
                     <InstagramIcon />
                   </IconButton>
                 </Tooltip>

@@ -1,14 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import PageTitle from 'core/components/PageTitle';
 import PageTitleWrapper from 'core/components/PageTitleWrapper';
-import {
-  Container,
-  Grid,
-  Card,
-  CardHeader,
-  CardContent,
-  Divider
-} from '@mui/material';
+import { Container, Grid, Card, CardHeader, CardContent, Divider } from '@mui/material';
 import { useState, SyntheticEvent } from 'react';
 
 import Tabs from '@mui/material/Tabs';
@@ -28,7 +21,7 @@ function TabPanel(props: TabPanelProps) {
 
   return (
     <div
-      role="tabpanel"
+      role='tabpanel'
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
@@ -46,7 +39,7 @@ function TabPanel(props: TabPanelProps) {
 function a11yProps(index: number) {
   return {
     id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`
+    'aria-controls': `simple-tabpanel-${index}`,
   };
 }
 
@@ -64,37 +57,31 @@ function TabsDemo() {
       </Helmet>
       <PageTitleWrapper>
         <PageTitle
-          heading="Tabs"
-          subHeading="Tabs make it easy to explore and switch between different views."
-          docs="https://material-ui.com/components/tabs/"
+          heading='Tabs'
+          subHeading='Tabs make it easy to explore and switch between different views.'
+          docs='https://material-ui.com/components/tabs/'
         />
       </PageTitleWrapper>
-      <Container maxWidth="lg">
-        <Grid
-          container
-          direction="row"
-          justifyContent="center"
-          alignItems="stretch"
-          spacing={3}
-        >
+      <Container maxWidth='lg'>
+        <Grid container direction='row' justifyContent='center' alignItems='stretch' spacing={3}>
           <Grid item xs={12}>
             <Card>
-              <CardHeader title="Basic Example" />
+              <CardHeader title='Basic Example' />
               <Divider />
               <CardContent>
                 <Box sx={{ width: '100%' }}>
                   <Tabs
-                    variant="scrollable"
-                    scrollButtons="auto"
-                    textColor="primary"
-                    indicatorColor="primary"
+                    variant='scrollable'
+                    scrollButtons='auto'
+                    textColor='primary'
+                    indicatorColor='primary'
                     value={value}
                     onChange={handleChange}
-                    aria-label="basic tabs example"
+                    aria-label='basic tabs example'
                   >
-                    <Tab label="Item One" {...a11yProps(0)} />
-                    <Tab label="Item Two" {...a11yProps(1)} />
-                    <Tab label="Item Three" {...a11yProps(2)} />
+                    <Tab label='Item One' {...a11yProps(0)} />
+                    <Tab label='Item Two' {...a11yProps(1)} />
+                    <Tab label='Item Three' {...a11yProps(2)} />
                   </Tabs>
                   <TabPanel value={value} index={0}>
                     Item One

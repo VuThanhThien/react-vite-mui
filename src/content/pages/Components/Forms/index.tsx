@@ -3,14 +3,7 @@ import PageTitle from 'core/components/PageTitle';
 import { useState } from 'react';
 
 import PageTitleWrapper from 'core/components/PageTitleWrapper';
-import {
-  Container,
-  Grid,
-  Card,
-  CardHeader,
-  CardContent,
-  Divider
-} from '@mui/material';
+import { Container, Grid, Card, CardHeader, CardContent, Divider } from '@mui/material';
 import Footer from 'core/components/Footer';
 
 import Box from '@mui/material/Box';
@@ -37,20 +30,20 @@ const label = { inputProps: { 'aria-label': 'Switch demo' } };
 const currencies = [
   {
     value: 'USD',
-    label: '$'
+    label: '$',
   },
   {
     value: 'EUR',
-    label: '€'
+    label: '€',
   },
   {
     value: 'BTC',
-    label: '฿'
+    label: '฿',
   },
   {
     value: 'JPY',
-    label: '¥'
-  }
+    label: '¥',
+  },
 ];
 
 function Forms() {
@@ -73,185 +66,155 @@ function Forms() {
       </Helmet>
       <PageTitleWrapper>
         <PageTitle
-          heading="Forms"
-          subHeading="Components that are used to build interactive placeholders used for data collection from users."
-          docs="https://material-ui.com/components/text-fields/"
+          heading='Forms'
+          subHeading='Components that are used to build interactive placeholders used for data collection from users.'
+          docs='https://material-ui.com/components/text-fields/'
         />
       </PageTitleWrapper>
-      <Container maxWidth="lg">
-        <Grid
-          container
-          direction="row"
-          justifyContent="center"
-          alignItems="stretch"
-          spacing={3}
-        >
+      <Container maxWidth='lg'>
+        <Grid container direction='row' justifyContent='center' alignItems='stretch' spacing={3}>
           <Grid item xs={12}>
             <Card>
-              <CardHeader title="Input Fields" />
+              <CardHeader title='Input Fields' />
               <Divider />
               <CardContent>
                 <Box
-                  component="form"
+                  component='form'
                   sx={{
-                    '& .MuiTextField-root': { m: 1, width: '25ch' }
+                    '& .MuiTextField-root': { m: 1, width: '25ch' },
                   }}
                   noValidate
-                  autoComplete="off"
+                  autoComplete='off'
                 >
                   <div>
+                    <TextField required id='outlined-required' label='Required' defaultValue='Hello World' />
+                    <TextField disabled id='outlined-disabled' label='Disabled' defaultValue='Hello World' />
                     <TextField
-                      required
-                      id="outlined-required"
-                      label="Required"
-                      defaultValue="Hello World"
+                      id='outlined-password-input'
+                      label='Password'
+                      type='password'
+                      autoComplete='current-password'
                     />
                     <TextField
-                      disabled
-                      id="outlined-disabled"
-                      label="Disabled"
-                      defaultValue="Hello World"
-                    />
-                    <TextField
-                      id="outlined-password-input"
-                      label="Password"
-                      type="password"
-                      autoComplete="current-password"
-                    />
-                    <TextField
-                      id="outlined-read-only-input"
-                      label="Read Only"
-                      defaultValue="Hello World"
+                      id='outlined-read-only-input'
+                      label='Read Only'
+                      defaultValue='Hello World'
                       InputProps={{
-                        readOnly: true
+                        readOnly: true,
                       }}
                     />
                     <TextField
-                      id="outlined-number"
-                      label="Number"
-                      type="number"
+                      id='outlined-number'
+                      label='Number'
+                      type='number'
                       InputLabelProps={{
-                        shrink: true
+                        shrink: true,
                       }}
                     />
+                    <TextField id='outlined-search' label='Search field' type='search' />
                     <TextField
-                      id="outlined-search"
-                      label="Search field"
-                      type="search"
-                    />
-                    <TextField
-                      id="outlined-helperText"
-                      label="Helper text"
-                      defaultValue="Default Value"
-                      helperText="Some important text"
+                      id='outlined-helperText'
+                      label='Helper text'
+                      defaultValue='Default Value'
+                      helperText='Some important text'
                     />
                   </div>
                   <div>
                     <TextField
                       required
-                      id="filled-required"
-                      label="Required"
-                      defaultValue="Hello World"
-                      variant="filled"
+                      id='filled-required'
+                      label='Required'
+                      defaultValue='Hello World'
+                      variant='filled'
                     />
                     <TextField
                       disabled
-                      id="filled-disabled"
-                      label="Disabled"
-                      defaultValue="Hello World"
-                      variant="filled"
+                      id='filled-disabled'
+                      label='Disabled'
+                      defaultValue='Hello World'
+                      variant='filled'
                     />
                     <TextField
-                      id="filled-password-input"
-                      label="Password"
-                      type="password"
-                      autoComplete="current-password"
-                      variant="filled"
+                      id='filled-password-input'
+                      label='Password'
+                      type='password'
+                      autoComplete='current-password'
+                      variant='filled'
                     />
                     <TextField
-                      id="filled-read-only-input"
-                      label="Read Only"
-                      defaultValue="Hello World"
+                      id='filled-read-only-input'
+                      label='Read Only'
+                      defaultValue='Hello World'
                       InputProps={{
-                        readOnly: true
+                        readOnly: true,
                       }}
-                      variant="filled"
+                      variant='filled'
                     />
                     <TextField
-                      id="filled-number"
-                      label="Number"
-                      type="number"
+                      id='filled-number'
+                      label='Number'
+                      type='number'
                       InputLabelProps={{
-                        shrink: true
+                        shrink: true,
                       }}
-                      variant="filled"
+                      variant='filled'
                     />
+                    <TextField id='filled-search' label='Search field' type='search' variant='filled' />
                     <TextField
-                      id="filled-search"
-                      label="Search field"
-                      type="search"
-                      variant="filled"
-                    />
-                    <TextField
-                      id="filled-helperText"
-                      label="Helper text"
-                      defaultValue="Default Value"
-                      helperText="Some important text"
-                      variant="filled"
+                      id='filled-helperText'
+                      label='Helper text'
+                      defaultValue='Default Value'
+                      helperText='Some important text'
+                      variant='filled'
                     />
                   </div>
                   <div>
                     <TextField
                       required
-                      id="standard-required"
-                      label="Required"
-                      defaultValue="Hello World"
-                      variant="standard"
+                      id='standard-required'
+                      label='Required'
+                      defaultValue='Hello World'
+                      variant='standard'
                     />
                     <TextField
                       disabled
-                      id="standard-disabled"
-                      label="Disabled"
-                      defaultValue="Hello World"
-                      variant="standard"
+                      id='standard-disabled'
+                      label='Disabled'
+                      defaultValue='Hello World'
+                      variant='standard'
                     />
                     <TextField
-                      id="standard-password-input"
-                      label="Password"
-                      type="password"
-                      autoComplete="current-password"
-                      variant="standard"
+                      id='standard-password-input'
+                      label='Password'
+                      type='password'
+                      autoComplete='current-password'
+                      variant='standard'
                     />
                     <TextField
-                      id="standard-read-only-input"
-                      label="Read Only"
-                      defaultValue="Hello World"
+                      id='standard-read-only-input'
+                      label='Read Only'
+                      defaultValue='Hello World'
                       InputProps={{
-                        readOnly: true
+                        readOnly: true,
                       }}
-                      variant="standard"
+                      variant='standard'
                     />
                     <TextField
-                      id="standard-number"
-                      label="Number"
-                      type="number"
+                      id='standard-number'
+                      label='Number'
+                      type='number'
                       InputLabelProps={{
-                        shrink: true
+                        shrink: true,
                       }}
-                      variant="standard"
+                      variant='standard'
                     />
+                    <TextField id='standard-search' label='Search field' type='search' variant='standard' />
                     <TextField
-                      id="standard-search"
-                      label="Search field"
-                      type="search"
-                      variant="standard"
-                    />
-                    <TextField
-                      id="standard-helperText"
-                      label="Helper text"
-                      defaultValue="Default Value"
-                      helperText="Some important text"
-                      variant="standard"
+                      id='standard-helperText'
+                      label='Helper text'
+                      defaultValue='Default Value'
+                      helperText='Some important text'
+                      variant='standard'
                     />
                   </div>
                 </Box>
@@ -260,25 +223,25 @@ function Forms() {
           </Grid>
           <Grid item xs={12}>
             <Card>
-              <CardHeader title="Select Inputs" />
+              <CardHeader title='Select Inputs' />
               <Divider />
               <CardContent>
                 <Box
-                  component="form"
+                  component='form'
                   sx={{
-                    '& .MuiTextField-root': { m: 1, width: '25ch' }
+                    '& .MuiTextField-root': { m: 1, width: '25ch' },
                   }}
                   noValidate
-                  autoComplete="off"
+                  autoComplete='off'
                 >
                   <div>
                     <TextField
-                      id="outlined-select-currency"
+                      id='outlined-select-currency'
                       select
-                      label="Select"
+                      label='Select'
                       value={currency}
                       onChange={handleChange}
-                      helperText="Please select your currency"
+                      helperText='Please select your currency'
                     >
                       {currencies.map((option) => (
                         <MenuItem key={option.value} value={option.value}>
@@ -287,15 +250,15 @@ function Forms() {
                       ))}
                     </TextField>
                     <TextField
-                      id="outlined-select-currency-native"
+                      id='outlined-select-currency-native'
                       select
-                      label="Native select"
+                      label='Native select'
                       value={currency}
                       onChange={handleChange}
                       SelectProps={{
-                        native: true
+                        native: true,
                       }}
-                      helperText="Please select your currency"
+                      helperText='Please select your currency'
                     >
                       {currencies.map((option) => (
                         <option key={option.value} value={option.value}>
@@ -306,13 +269,13 @@ function Forms() {
                   </div>
                   <div>
                     <TextField
-                      id="filled-select-currency"
+                      id='filled-select-currency'
                       select
-                      label="Select"
+                      label='Select'
                       value={currency}
                       onChange={handleChange}
-                      helperText="Please select your currency"
-                      variant="filled"
+                      helperText='Please select your currency'
+                      variant='filled'
                     >
                       {currencies.map((option) => (
                         <MenuItem key={option.value} value={option.value}>
@@ -321,16 +284,16 @@ function Forms() {
                       ))}
                     </TextField>
                     <TextField
-                      id="filled-select-currency-native"
+                      id='filled-select-currency-native'
                       select
-                      label="Native select"
+                      label='Native select'
                       value={currency}
                       onChange={handleChange}
                       SelectProps={{
-                        native: true
+                        native: true,
                       }}
-                      helperText="Please select your currency"
-                      variant="filled"
+                      helperText='Please select your currency'
+                      variant='filled'
                     >
                       {currencies.map((option) => (
                         <option key={option.value} value={option.value}>
@@ -341,13 +304,13 @@ function Forms() {
                   </div>
                   <div>
                     <TextField
-                      id="standard-select-currency"
+                      id='standard-select-currency'
                       select
-                      label="Select"
+                      label='Select'
                       value={currency}
                       onChange={handleChange}
-                      helperText="Please select your currency"
-                      variant="standard"
+                      helperText='Please select your currency'
+                      variant='standard'
                     >
                       {currencies.map((option) => (
                         <MenuItem key={option.value} value={option.value}>
@@ -356,16 +319,16 @@ function Forms() {
                       ))}
                     </TextField>
                     <TextField
-                      id="standard-select-currency-native"
+                      id='standard-select-currency-native'
                       select
-                      label="Native select"
+                      label='Native select'
                       value={currency}
                       onChange={handleChange}
                       SelectProps={{
-                        native: true
+                        native: true,
                       }}
-                      helperText="Please select your currency"
-                      variant="standard"
+                      helperText='Please select your currency'
+                      variant='standard'
                     >
                       {currencies.map((option) => (
                         <option key={option.value} value={option.value}>
@@ -380,7 +343,7 @@ function Forms() {
           </Grid>
           <Grid item xs={12}>
             <Card>
-              <CardHeader title="Switches" />
+              <CardHeader title='Switches' />
               <Divider />
               <CardContent>
                 <Switch {...label} defaultChecked />
@@ -392,52 +355,31 @@ function Forms() {
           </Grid>
           <Grid item xs={12}>
             <Card>
-              <CardHeader title="Checkboxes &amp; Radios" />
+              <CardHeader title='Checkboxes &amp; Radios' />
               <Divider />
               <CardContent>
                 <Checkbox {...label} defaultChecked />
-                <Checkbox {...label} defaultChecked color="secondary" />
-                <Checkbox {...label} defaultChecked color="success" />
-                <Checkbox {...label} defaultChecked color="default" />
+                <Checkbox {...label} defaultChecked color='secondary' />
+                <Checkbox {...label} defaultChecked color='success' />
+                <Checkbox {...label} defaultChecked color='default' />
                 <Checkbox
                   {...label}
                   defaultChecked
                   sx={{
                     color: pink[800],
                     '&.Mui-checked': {
-                      color: pink[600]
-                    }
+                      color: pink[600],
+                    },
                   }}
                 />
                 <Divider sx={{ my: 5 }} />
-                <FormControl component="fieldset">
-                  <FormLabel component="legend">Gender</FormLabel>
-                  <RadioGroup
-                    row
-                    aria-label="gender"
-                    name="row-radio-buttons-group"
-                  >
-                    <FormControlLabel
-                      value="female"
-                      control={<Radio />}
-                      label="Female"
-                    />
-                    <FormControlLabel
-                      value="male"
-                      control={<Radio />}
-                      label="Male"
-                    />
-                    <FormControlLabel
-                      value="other"
-                      control={<Radio />}
-                      label="Other"
-                    />
-                    <FormControlLabel
-                      value="disabled"
-                      disabled
-                      control={<Radio />}
-                      label="other"
-                    />
+                <FormControl component='fieldset'>
+                  <FormLabel component='legend'>Gender</FormLabel>
+                  <RadioGroup row aria-label='gender' name='row-radio-buttons-group'>
+                    <FormControlLabel value='female' control={<Radio />} label='Female' />
+                    <FormControlLabel value='male' control={<Radio />} label='Male' />
+                    <FormControlLabel value='other' control={<Radio />} label='Other' />
+                    <FormControlLabel value='disabled' disabled control={<Radio />} label='other' />
                   </RadioGroup>
                 </FormControl>
               </CardContent>
@@ -445,29 +387,16 @@ function Forms() {
           </Grid>
           <Grid item xs={12}>
             <Card>
-              <CardHeader title="Sliders" />
+              <CardHeader title='Sliders' />
               <Divider />
               <CardContent>
                 <Box sx={{ width: 200 }}>
-                  <Stack
-                    spacing={2}
-                    direction="row"
-                    sx={{ mb: 1 }}
-                    alignItems="center"
-                  >
+                  <Stack spacing={2} direction='row' sx={{ mb: 1 }} alignItems='center'>
                     <VolumeDown />
-                    <Slider
-                      aria-label="Volume"
-                      value={value}
-                      onChange={handleChange2}
-                    />
+                    <Slider aria-label='Volume' value={value} onChange={handleChange2} />
                     <VolumeUp />
                   </Stack>
-                  <Slider
-                    disabled
-                    defaultValue={30}
-                    aria-label="Disabled slider"
-                  />
+                  <Slider disabled defaultValue={30} aria-label='Disabled slider' />
                 </Box>
               </CardContent>
             </Card>

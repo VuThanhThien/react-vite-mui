@@ -1,14 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import PageTitle from 'core/components/PageTitle';
 import PageTitleWrapper from 'core/components/PageTitleWrapper';
-import {
-  Container,
-  Grid,
-  Card,
-  CardHeader,
-  CardContent,
-  Divider
-} from '@mui/material';
+import { Container, Grid, Card, CardHeader, CardContent, Divider } from '@mui/material';
 import { useState } from 'react';
 import Footer from 'core/components/Footer';
 
@@ -26,10 +19,8 @@ import Badge from '@mui/material/Badge';
 
 const shapeStyles = { bgcolor: 'primary.main', width: 40, height: 40 };
 const shapeCircleStyles = { borderRadius: '50%' };
-const rectangle = <Box component="span" sx={shapeStyles} />;
-const circle = (
-  <Box component="span" sx={{ ...shapeStyles, ...shapeCircleStyles }} />
-);
+const rectangle = <Box component='span' sx={shapeStyles} />;
+const circle = <Box component='span' sx={{ ...shapeStyles, ...shapeCircleStyles }} />;
 
 function Badges() {
   const [count, setCount] = useState(1);
@@ -46,40 +37,29 @@ function Badges() {
       </Helmet>
       <PageTitleWrapper>
         <PageTitle
-          heading="Badges"
-          subHeading="Badge generates a small badge to the top-right of its child(ren)."
-          docs="https://material-ui.com/components/badges/"
+          heading='Badges'
+          subHeading='Badge generates a small badge to the top-right of its child(ren).'
+          docs='https://material-ui.com/components/badges/'
         />
       </PageTitleWrapper>
-      <Container maxWidth="lg">
-        <Grid
-          container
-          direction="row"
-          justifyContent="center"
-          alignItems="stretch"
-          spacing={3}
-        >
+      <Container maxWidth='lg'>
+        <Grid container direction='row' justifyContent='center' alignItems='stretch' spacing={3}>
           <Grid item xs={12}>
             <Card>
-              <CardHeader title="Shapes" />
+              <CardHeader title='Shapes' />
               <Divider />
               <CardContent>
-                <Stack spacing={3} direction="row">
-                  <Badge color="secondary" badgeContent=" ">
+                <Stack spacing={3} direction='row'>
+                  <Badge color='secondary' badgeContent=' '>
                     {rectangle}
                   </Badge>
-                  <Badge color="secondary" badgeContent=" " variant="dot">
+                  <Badge color='secondary' badgeContent=' ' variant='dot'>
                     {rectangle}
                   </Badge>
-                  <Badge color="secondary" overlap="circular" badgeContent=" ">
+                  <Badge color='secondary' overlap='circular' badgeContent=' '>
                     {circle}
                   </Badge>
-                  <Badge
-                    color="secondary"
-                    overlap="circular"
-                    badgeContent=" "
-                    variant="dot"
-                  >
+                  <Badge color='secondary' overlap='circular' badgeContent=' ' variant='dot'>
                     {circle}
                   </Badge>
                 </Stack>
@@ -88,7 +68,7 @@ function Badges() {
           </Grid>
           <Grid item xs={12}>
             <Card>
-              <CardHeader title="Badges Visibility" />
+              <CardHeader title='Badges Visibility' />
               <Divider />
               <CardContent>
                 <Box
@@ -97,53 +77,44 @@ function Badges() {
                     display: 'flex',
                     flexDirection: 'column',
                     '& > *': {
-                      marginBottom: 2
+                      marginBottom: 2,
                     },
                     '& .MuiBadge-root': {
-                      marginRight: 4
-                    }
+                      marginRight: 4,
+                    },
                   }}
                 >
                   <div>
-                    <Badge color="secondary" badgeContent={count}>
+                    <Badge color='secondary' badgeContent={count}>
                       <MailIcon />
                     </Badge>
                     <ButtonGroup>
                       <Button
-                        aria-label="reduce"
+                        aria-label='reduce'
                         onClick={() => {
                           setCount(Math.max(count - 1, 0));
                         }}
                       >
-                        <RemoveIcon fontSize="small" />
+                        <RemoveIcon fontSize='small' />
                       </Button>
                       <Button
-                        aria-label="increase"
+                        aria-label='increase'
                         onClick={() => {
                           setCount(count + 1);
                         }}
                       >
-                        <AddIcon fontSize="small" />
+                        <AddIcon fontSize='small' />
                       </Button>
                     </ButtonGroup>
                   </div>
                   <div>
-                    <Badge
-                      color="secondary"
-                      variant="dot"
-                      invisible={invisible}
-                    >
+                    <Badge color='secondary' variant='dot' invisible={invisible}>
                       <MailIcon />
                     </Badge>
                     <FormControlLabel
                       sx={{ color: 'text.primary' }}
-                      control={
-                        <Switch
-                          checked={!invisible}
-                          onChange={handleBadgeVisibility}
-                        />
-                      }
-                      label="Show Badge"
+                      control={<Switch checked={!invisible} onChange={handleBadgeVisibility} />}
+                      label='Show Badge'
                     />
                   </div>
                 </Box>
@@ -152,15 +123,15 @@ function Badges() {
           </Grid>
           <Grid item xs={12}>
             <Card>
-              <CardHeader title="Colors" />
+              <CardHeader title='Colors' />
               <Divider />
               <CardContent>
-                <Stack spacing={2} direction="row">
-                  <Badge badgeContent={4} color="secondary">
-                    <MailIcon color="action" />
+                <Stack spacing={2} direction='row'>
+                  <Badge badgeContent={4} color='secondary'>
+                    <MailIcon color='action' />
                   </Badge>
-                  <Badge badgeContent={4} color="success">
-                    <MailIcon color="action" />
+                  <Badge badgeContent={4} color='success'>
+                    <MailIcon color='action' />
                   </Badge>
                 </Stack>
               </CardContent>

@@ -13,7 +13,6 @@ const Login = () => {
   const navigate = useNavigate();
   const snackbar = useSnackbar();
   const { t } = useTranslation();
-  
 
   const handleLogin = (email: string, password: string) => {
     login(email, password)
@@ -52,7 +51,7 @@ const Login = () => {
       />
       <Grid item xs={12} sm={8} md={5} component={Paper} square>
         <BoxedLayout>
-          <Typography component='h1' variant='h5' sx={{fontSize: '18px'}}>
+          <Typography component='h1' variant='h5' sx={{ fontSize: '18px' }}>
             {t('auth.login.title')}
           </Typography>
           <Box component='form' marginTop={3} noValidate onSubmit={formik.handleSubmit}>
@@ -94,13 +93,7 @@ const Login = () => {
             <LoadingButton type='submit' fullWidth loading={isLoggingIn} variant='contained' sx={{ mt: 3 }}>
               {t('auth.login.submit')}
             </LoadingButton>
-            <Button
-              component={RouterLink}
-              to={`/register`}
-              color='primary'
-              fullWidth
-              sx={{ mt: 2 }}
-            >
+            <Button component={RouterLink} to={`/register`} color='primary' fullWidth sx={{ mt: 2 }}>
               {t('auth.login.newAccountLink')}
             </Button>
           </Box>
