@@ -11,17 +11,17 @@ interface SidebarLayoutProps {
 
 const SidebarLayout: FC<SidebarLayoutProps> = () => {
   const theme = useTheme();
-  // const navigate = useNavigate();
-  // const { userInfo, hasRole } = useAuth();
-  // useEffect(() => {
-  //   if (userInfo) {
-  //     if (!hasRole([userInfo.role])) {
-  //       navigate('/403');
-  //     }
-  //   } else {
-  //     navigate('/login');
-  //   }
-  // });
+  const navigate = useNavigate();
+  const { userInfo, hasRole } = useAuth();
+  useEffect(() => {
+    if (userInfo) {
+      if (!hasRole([userInfo.role])) {
+        navigate('/403');
+      }
+    } else {
+      navigate('/login');
+    }
+  });
 
   return (
     <>
