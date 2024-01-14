@@ -1,3 +1,4 @@
+import { REACT_APP_GA_TRACKING_ID } from 'core/config';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -6,8 +7,7 @@ const usePageTracking = () => {
   const [initialized, setInitialized] = useState(false);
 
   useEffect(() => {
-    const trackingId = import.meta.env.REACT_APP_GA_TRACKING_ID;
-    if (trackingId) {
+    if (REACT_APP_GA_TRACKING_ID) {
       setInitialized(true);
     }
   }, []);

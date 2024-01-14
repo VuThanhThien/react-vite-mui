@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import * as Sentry from '@sentry/react';
 import 'nprogress/nprogress.css';
 import { SidebarProvider } from 'core/contexts/SidebarContext';
-import * as serviceWorker from 'serviceWorker';
+import setupServiceWorker from 'serviceWorker';
 import App from 'App';
 import { StrictMode, Suspense } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
@@ -14,10 +14,11 @@ import './core/config/i18n';
 import QueryWrapper from 'core/components/QueryWrapper';
 import AuthProvider from 'content/auth/contexts/AuthProvider';
 import SnackbarProvider from 'core/contexts/SnackbarProvider';
+import { NODE_ENV, VITE_APP_SENTRY_DSN } from 'core/config';
 
-if (import.meta.env.NODE_ENV === 'production') {
+if (NODE_ENV === 'production') {
   Sentry.init({
-    dsn: import.meta.env.VITE_APP_SENTRY_DSN,
+    dsn: VITE_APP_SENTRY_DSN,
   });
 }
 
@@ -57,4 +58,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   </StrictMode>,
 );
 
-serviceWorker.unregister();
+setupServiceWorker();

@@ -1,4 +1,5 @@
 import { Box, Container, Link, Typography, styled } from '@mui/material';
+import { VITE_APP_NAME } from 'core/config';
 
 const FooterWrapper = styled(Container)(
   ({ theme }) => `
@@ -17,7 +18,7 @@ function Footer() {
         justifyContent='space-between'
       >
         <Box>
-          <Typography variant='subtitle1'>&copy; {import.meta.env.VITE_APP_NAME}</Typography>
+          <Typography variant='subtitle1'>&copy; {VITE_APP_NAME}</Typography>
         </Box>
         <Typography
           sx={{
