@@ -1,9 +1,10 @@
 import { FC, ReactNode, useEffect } from 'react';
 import { Box, alpha, lighten, useTheme } from '@mui/material';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
 import { Header } from './Header';
 import { useAuth } from 'modules/auth/contexts/AuthProvider';
+import storage from 'core/utils/authStorage';
 
 interface SidebarLayoutProps {
   children?: ReactNode;
@@ -11,17 +12,21 @@ interface SidebarLayoutProps {
 
 const SidebarLayout: FC<SidebarLayoutProps> = () => {
   const theme = useTheme();
+  const accessToken = storage.getAccessTokenClient();
   const navigate = useNavigate();
+  const location = useLocation();
   const { userInfo, hasRole } = useAuth();
   useEffect(() => {
-    if (userInfo) {
+    if (!accessToken) {
+      navigate('/login');
+    } else if (userInfo && !!accessToken) {
       if (!hasRole([userInfo.role])) {
         navigate('/403');
       }
     } else {
       navigate('/login');
     }
-  });
+  }, [location.pathname, accessToken]);
 
   return (
     <>

@@ -9,7 +9,7 @@ i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     backend: {
-      loadPath: `./locales/{{lng}}/translation.json`,
+      loadPath: `/locales/{{lng}}/translation.json`,
     },
     lng: 'en',
     fallbackLng: 'en',

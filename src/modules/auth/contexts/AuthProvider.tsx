@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 interface AuthContextInterface {
   hasRole: (roles?: string[]) => {};
   isLoggingIn: boolean;
-  login: (email: string, password: string) => Promise<any>;
+  login: (mail: string, password: string) => Promise<any>;
   logout: () => void;
   userInfo?: UserInfo;
 }
