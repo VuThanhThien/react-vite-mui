@@ -1,8 +1,9 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useEffect } from 'react';
 import { Box, alpha, lighten, useTheme } from '@mui/material';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
 import { Header } from './Header';
+import { useAuth } from 'modules/auth/contexts/AuthProvider';
 
 interface SidebarLayoutProps {
   children?: ReactNode;
@@ -10,6 +11,17 @@ interface SidebarLayoutProps {
 
 const SidebarLayout: FC<SidebarLayoutProps> = () => {
   const theme = useTheme();
+  // const navigate = useNavigate();
+  // const { userInfo, hasRole } = useAuth();
+  // useEffect(() => {
+  //   if (userInfo) {
+  //     if (!hasRole([userInfo.role])) {
+  //       navigate('/403');
+  //     }
+  //   } else {
+  //     navigate('/login');
+  //   }
+  // });
 
   return (
     <>

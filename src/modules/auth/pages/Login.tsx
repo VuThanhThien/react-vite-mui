@@ -9,26 +9,26 @@ import { useSnackbar } from 'core/contexts/SnackbarProvider';
 import BoxedLayout from 'core/components/BoxedLayout';
 
 const Login = () => {
+  const { t } = useTranslation();
   const { isLoggingIn, login } = useAuth();
   const navigate = useNavigate();
   const snackbar = useSnackbar();
-  const { t } = useTranslation();
 
   const handleLogin = (email: string, password: string) => {
     login(email, password)
-      .then(() => navigate(`/admin`, { replace: true }))
+      .then(() => navigate(`/dashboards`, { replace: true }))
       .catch(() => snackbar.error(t('common.errors.unexpected.subTitle')));
   };
 
   const formik = useFormik({
     initialValues: {
-      email: 'demo@example.com',
-      password: "guWEK<'r/-47-XG3",
+      email: 'abc@gmail.com',
+      password: 'def',
     },
     validationSchema: Yup.object({
       email: Yup.string().email(t('common.validations.email')).required(t('common.validations.required')),
       password: Yup.string()
-        .min(8, t('common.validations.min', { size: 8 }))
+        // .min(8, t('common.validations.min', { size: 8 }))
         .required(t('common.validations.required')),
     }),
     onSubmit: (values) => handleLogin(values.email, values.password),

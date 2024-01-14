@@ -3,35 +3,35 @@ import { Navigate } from 'react-router-dom';
 import { RouteObject } from 'react-router';
 import SidebarLayout from 'layouts/SidebarLayout';
 import BaseLayout from 'layouts/BaseLayout';
-import { Overview } from 'content/overview';
-import Login from 'content/auth/pages/Login';
+import { Overview } from 'modules/overview';
+import Login from 'modules/auth/pages/Login';
 
 // Pages
 
 // Dashboards
-const Crypto = lazy(() => import('content/dashboards/Crypto'));
-const Register = lazy(() => import('content/auth/pages/Register'));
-const ForgotPassword = lazy(() => import('content/auth/pages/ForgotPassword'));
-const ForgotPasswordSubmit = lazy(() => import('content/auth/pages/ForgotPasswordSubmit'));
-const Messenger = lazy(() => import('content/applications/Messenger'));
-const Transactions = lazy(() => import('content/applications/Transactions'));
-const UserProfile = lazy(() => import('content/applications/Users/profile'));
-const UserSettings = lazy(() => import('content/applications/Users/settings'));
-const Buttons = lazy(() => import('content/pages/Components/Buttons'));
-const Modals = lazy(() => import('content/pages/Components/Modals'));
-const Accordions = lazy(() => import('content/pages/Components/Accordions'));
-const Tabs = lazy(() => import('content/pages/Components/Tabs'));
-const Badges = lazy(() => import('content/pages/Components/Badges'));
-const Tooltips = lazy(() => import('content/pages/Components/Tooltips'));
-const Avatars = lazy(() => import('content/pages/Components/Avatars'));
-const Cards = lazy(() => import('content/pages/Components/Cards'));
-const Forms = lazy(() => import('content/pages/Components/Forms'));
+const Crypto = lazy(() => import('modules/dashboards/Crypto'));
+const Register = lazy(() => import('modules/auth/pages/Register'));
+const ForgotPassword = lazy(() => import('modules/auth/pages/ForgotPassword'));
+const ForgotPasswordSubmit = lazy(() => import('modules/auth/pages/ForgotPasswordSubmit'));
+const Messenger = lazy(() => import('modules/applications/Messenger'));
+const Transactions = lazy(() => import('modules/applications/Transactions'));
+const UserProfile = lazy(() => import('modules/applications/Users/profile'));
+const UserSettings = lazy(() => import('modules/applications/Users/settings'));
+const Buttons = lazy(() => import('modules/pages/Components/Buttons'));
+const Modals = lazy(() => import('modules/pages/Components/Modals'));
+const Accordions = lazy(() => import('modules/pages/Components/Accordions'));
+const Tabs = lazy(() => import('modules/pages/Components/Tabs'));
+const Badges = lazy(() => import('modules/pages/Components/Badges'));
+const Tooltips = lazy(() => import('modules/pages/Components/Tooltips'));
+const Avatars = lazy(() => import('modules/pages/Components/Avatars'));
+const Cards = lazy(() => import('modules/pages/Components/Cards'));
+const Forms = lazy(() => import('modules/pages/Components/Forms'));
 
 // Status
-const Status404 = lazy(() => import('content/pages/Status/Status404'));
-const Status500 = lazy(() => import('content/pages/Status/Status500'));
-const StatusComingSoon = lazy(() => import('content/pages/Status/ComingSoon'));
-const StatusMaintenance = lazy(() => import('content/pages/Status/Maintenance'));
+const Status404 = lazy(() => import('modules/pages/Status/Status404'));
+const Status500 = lazy(() => import('modules/pages/Status/Status500'));
+const StatusComingSoon = lazy(() => import('modules/pages/Status/ComingSoon'));
+const StatusMaintenance = lazy(() => import('modules/pages/Status/Maintenance'));
 
 const routes: RouteObject[] = [
   {

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useMutation } from 'react-query';
-import { UserInfo } from '../types/userInfo';
+import { UserInfo } from '../types';
 
 const register = async (userInfo: UserInfo): Promise<UserInfo> => {
   const { data } = await axios.post('/api/register', userInfo);

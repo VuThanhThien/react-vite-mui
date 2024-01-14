@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import { useRegister } from '../hooks/useRegister';
-import { UserInfo } from '../types/userInfo';
+import { UserInfo } from '../types';
 import LoadingButton from '@mui/lab/LoadingButton';
 import {
   Typography,

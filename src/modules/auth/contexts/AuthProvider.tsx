@@ -1,16 +1,15 @@
-import React, { createContext, useContext, useEffect } from 'react';
+import React, { createContext, useContext } from 'react';
 import { useLogin } from '../hooks/useLogin';
-import { useLogout } from '../hooks/useLogout';
 import { useUserInfo } from '../hooks/useUserInfo';
-import { UserInfo } from '../types/userInfo';
+import { UserInfo } from '../types';
 import storage from 'core/utils/authStorage';
+import { useNavigate } from 'react-router-dom';
 
 interface AuthContextInterface {
   hasRole: (roles?: string[]) => {};
   isLoggingIn: boolean;
-  isLoggingOut: boolean;
   login: (email: string, password: string) => Promise<any>;
-  logout: () => Promise<any>;
+  logout: () => void;
   userInfo?: UserInfo;
 }
 
@@ -21,13 +20,13 @@ type AuthProviderProps = {
 };
 
 const AuthProvider = ({ children }: AuthProviderProps) => {
+  const navigate = useNavigate();
   const accessToken = storage.getAccessTokenClient();
 
   const { isLoggingIn, login } = useLogin();
-  const { isLoggingOut, logout } = useLogout();
-  const { data: userInfo } = useUserInfo(accessToken);
+  const { data: userInfo } = useUserInfo(!!accessToken);
 
-  const hasRole = (roles?: string[]) => {
+  const hasRole = (roles?: string[]): boolean => {
     if (!roles || roles.length === 0) {
       return true;
     }
@@ -37,21 +36,11 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
     return roles.includes(userInfo.role);
   };
 
-  const handleLogin = async (email: string, password: string) => {
-    return login({ email, password })
-      .then((key: string) => {
-        storage.setAccessTokenClient(key);
-        return key;
-      })
-      .catch((err) => {
-        throw err;
-      });
-  };
-
-  const handleLogout = async () => {
-    return logout()
-      .then((data) => {
-        storage.clearTokensClient();
+  const handleLogin = (mail: string, password: string) => {
+    return login({ mail, password })
+      .then(({ data }) => {
+        storage.setAccessTokenClient(data.accessToken);
+        storage.setRefreshTokenClient(data.refreshToken);
         return data;
       })
       .catch((err) => {
@@ -59,12 +48,16 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
       });
   };
 
+  const handleLogout = () => {
+    storage.clearTokensClient();
+    navigate('/login');
+  };
+
   return (
     <AuthContext.Provider
       value={{
         hasRole,
         isLoggingIn,
-        isLoggingOut,
         login: handleLogin,
         logout: handleLogout,
         userInfo,

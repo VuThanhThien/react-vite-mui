@@ -1,8 +1,11 @@
 import { useEffect } from 'react';
 import NProgress from 'nprogress';
-import { Box, CircularProgress } from '@mui/material';
+import { Backdrop, Box, useTheme } from '@mui/material';
+import PacmanLoader from 'react-spinners/PacmanLoader';
 
 function SuspenseLoader() {
+  const theme = useTheme();
+  NProgress.configure({ showSpinner: false });
   useEffect(() => {
     NProgress.start();
 
@@ -24,7 +27,9 @@ function SuspenseLoader() {
       alignItems='center'
       justifyContent='center'
     >
-      <CircularProgress size={64} disableShrink thickness={3} />
+      <Backdrop sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }} open={true}>
+        <PacmanLoader color={theme.palette.primary.main} loading={true} size={40} />
+      </Backdrop>
     </Box>
   );
 }

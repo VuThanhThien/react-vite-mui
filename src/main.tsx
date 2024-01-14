@@ -12,7 +12,7 @@ import SuspenseLoader from 'core/components/SuspenseLoader';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import './core/config/i18n';
 import QueryWrapper from 'core/components/QueryWrapper';
-import AuthProvider from 'content/auth/contexts/AuthProvider';
+import AuthProvider from 'modules/auth/contexts/AuthProvider';
 import SnackbarProvider from 'core/contexts/SnackbarProvider';
 import { NODE_ENV, VITE_APP_SENTRY_DSN } from 'core/config';
 
@@ -35,12 +35,12 @@ const queryClient = new QueryClient({
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
-      <Suspense fallback={<SuspenseLoader />}>
-        <Sentry.ErrorBoundary fallback={<SuspenseLoader />}>
-          <QueryClientProvider client={queryClient}>
-            <QueryWrapper>
-              <HelmetProvider>
+    <HelmetProvider>
+      <BrowserRouter>
+        <Suspense fallback={<SuspenseLoader />}>
+          <Sentry.ErrorBoundary fallback={<SuspenseLoader />}>
+            <QueryClientProvider client={queryClient}>
+              <QueryWrapper>
                 <SnackbarProvider>
                   <AuthProvider>
                     <SidebarProvider>
@@ -48,13 +48,13 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                     </SidebarProvider>
                   </AuthProvider>
                 </SnackbarProvider>
-              </HelmetProvider>
-            </QueryWrapper>
-            <ReactQueryDevtools initialIsOpen={false} />
-          </QueryClientProvider>
-        </Sentry.ErrorBoundary>
-      </Suspense>
-    </BrowserRouter>
+              </QueryWrapper>
+              <ReactQueryDevtools initialIsOpen={false} />
+            </QueryClientProvider>
+          </Sentry.ErrorBoundary>
+        </Suspense>
+      </BrowserRouter>
+    </HelmetProvider>
   </StrictMode>,
 );
 

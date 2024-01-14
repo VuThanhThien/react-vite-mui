@@ -1,7 +1,7 @@
 import Axios, { InternalAxiosRequestConfig } from 'axios';
 import { jwtDecode } from 'jwt-decode';
 import { VITE_BASE_API_URL } from '../config';
-import { UserInfo } from 'content/auth/types/userInfo';
+import { UserInfo } from 'modules/auth/types';
 import storage from 'core/utils/authStorage';
 
 const publicEndpoint = ['/api/login', '/session/createClientSession'];
@@ -26,7 +26,7 @@ export const axios = Axios.create({
 
 axios.interceptors.request.use(authRequestInterceptor);
 axios.interceptors.response.use(
-  (response) => response.data?.data || response.data,
+  (response) => response,
   async (error) => {
     const originalConfig = error.config;
     const refreshToken = storage.getRefreshTokenClient();
