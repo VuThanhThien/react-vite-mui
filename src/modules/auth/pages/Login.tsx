@@ -14,24 +14,24 @@ const Login = () => {
   const navigate = useNavigate();
   const snackbar = useSnackbar();
 
-  const handleLogin = (email: string, password: string) => {
-    login(email, password)
+  const handleLogin = (mail: string, password: string) => {
+    login(mail, password)
       .then(() => navigate(`/dashboards`, { replace: true }))
       .catch(() => snackbar.error(t('common.errors.unexpected.subTitle')));
   };
 
   const formik = useFormik({
     initialValues: {
-      email: 'abc@gmail.com',
+      mail: 'abc@gmail.com',
       password: 'def',
     },
     validationSchema: Yup.object({
-      email: Yup.string().email(t('common.validations.email')).required(t('common.validations.required')),
+      mail: Yup.string().email(t('common.validations.email')).required(t('common.validations.required')),
       password: Yup.string()
         // .min(8, t('common.validations.min', { size: 8 }))
         .required(t('common.validations.required')),
     }),
-    onSubmit: (values) => handleLogin(values.email, values.password),
+    onSubmit: (values) => handleLogin(values.mail, values.password),
   });
 
   return (
@@ -65,10 +65,10 @@ const Login = () => {
               autoComplete='email'
               autoFocus
               disabled={isLoggingIn}
-              value={formik.values.email}
+              value={formik.values.mail}
               onChange={formik.handleChange}
-              error={formik.touched.email && Boolean(formik.errors.email)}
-              helperText={formik.touched.email && formik.errors.email}
+              error={formik.touched.mail && Boolean(formik.errors.mail)}
+              helperText={formik.touched.mail && formik.errors.mail}
             />
             <TextField
               margin='normal'
